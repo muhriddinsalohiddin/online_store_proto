@@ -7,6 +7,9 @@ message Category {
     string id = 1;
     string name = 2;
     string parent_id = 3;
+    string created_at = 4;
+    string updated_at = 5;
+    string deleted_at = 6;
 }
 message GetCategoryByIdReq {
     string id = 1;

@@ -6,6 +6,9 @@ package catalog;
 message Author {
     string id = 1;
     string name = 2;
+    string created_at = 3;
+    string updated_at = 4;
+    string deleted_at = 5;
 }
 message GetAuthorByIdReq {
     string id = 1;
