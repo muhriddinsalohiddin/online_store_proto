@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package order;
+
+import "order_service/order.proto";
+
+service OrderService {
+    //CRUD for Orders
+
+    rpc CreateOrder (Order) returns (Order) {}
+    rpc UpdateOrder (Order) returns (Order) {}
+    rpc GetOrderById (GetOrderByIdReq) returns (Order) {}
+    rpc DeleteById (GetOrderByIdReq) returns (EmptyResp) {}
+    rpc ListOrders (ListOrderReq) returns (ListOrderResp) {}
+}

@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package catalog;
+
+
+message Author {
+    string id = 1;
+    string name = 2;
+}
+message GetAuthorByIdReq {
+    string id = 1;
+}
+message ListAuthorReq {
+    int64  page = 1;
+    int64 limit = 2;
+}
+message ListAuthorResp {
+    repeated Author authors = 1;
+    int64 count = 2;
+}

@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+package catalog;
+
+import "catalog_service/book.proto";
+import "catalog_service/author.proto";
+import "catalog_service/category.proto";
+
+service CatalogService {
+    // CRUD for Books
+    rpc CreateBook (Book) returns (Book) {}
+    rpc UpdateBook (Book) returns (Book) {}
+    rpc GetBookById (GetBookByIdReq) returns (Book) {}
+    rpc DeletedBookById (GetBookByIdReq) returns (EmptyResp) {}
+    rpc ListBooks (ListBookReq) returns (ListBookResp) {}
+
+    // CRUD for Authors
+    rpc CreateAuthor (Author) returns (Author) {}
+    rpc UpdateAuthor (Author) returns (Author) {}
+    rpc GetAuthorById (GetAuthorByIdReq) returns (Author) {}
+    rpc DeleteAuthorById (GetAuthorByIdReq) returns (EmptyResp) {}
+    rpc ListAuthors (ListAuthorReq) returns (ListAuthorResp) {}
+
+    // CRUD for Categories
+    rpc CreateCategory (Category) returns (Category) {}
+    rpc UpdateCategory (Category) returns (Category) {}
+    rpc GetCategoryById (GetCategoryByIdReq) returns (Category) {}
+    rpc DeleteCategoryById (GetCategoryByIdReq) returns (EmptyResp) {}
+    rpc ListCategories (ListCategoryReq) returns (ListCategoryResp) {}
+}

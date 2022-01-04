@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+package order;
+
+message EmptyResp {}
+
+message Order {
+    string id = 1;
+    string book_id = 2;
+    string description = 3;
+    string created_at = 4;
+    string updated_at = 5;
+    string deleted_at = 6;
+}
+
+message GetOrderByIdReq {
+    string id = 1;
+}
+message ListOrderReq {
+    string book_id = 1;
+    int64 page = 2;
+    int64 limit = 3;
+}
+message ListOrderResp {
+    repeated Order orders = 1;
+    int64 count = 2;
+}
+
